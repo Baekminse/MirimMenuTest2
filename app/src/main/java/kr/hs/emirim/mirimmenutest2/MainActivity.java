@@ -28,7 +28,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-        baseLayout = findViewById(R.id.baseLayout);
+        baseLayout = findViewById(R.id.baseline);
         btn1 = findViewById(R.id.btn);
 
         FloatingActionButton fab = findViewById(R.id.fab);
@@ -62,21 +62,16 @@ public class MainActivity extends AppCompatActivity {
 //        }
 
         switch (item.getItemId()){
-            case R.id.itemRed:
+            case R.id.itemJae2:
                 baseLayout.setBackgroundColor(Color.RED);
                 return true;
-            case R.id.itemGreen:
+            case R.id.itemjae1:
                 baseLayout.setBackgroundColor(Color.GREEN);
                 return true;
-            case R.id.itemBlue:
+            case R.id.itemjae:
                 baseLayout.setBackgroundColor(Color.BLUE);
                 return true;
-            case R.id.rotate_45:
-                btn1.setRotation(45);
-                return true;
-            case R.id.scale_2:
-                btn1.setScaleX(2);
-                return true;
+
         }
 
         return false;
