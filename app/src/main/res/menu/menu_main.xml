@@ -3,8 +3,12 @@
     xmlns:tools="http://schemas.android.com/tools"
     tools:context="kr.hs.emirim.mirimmenutest2.MainActivity">
     <item
-        android:id="@+id/action_settings"
-        android:orderInCategory="100"
-        android:title="@string/action_settings"
-        app:showAsAction="never" />
+        android:title="재혁"
+        android:id="@+id/itemJae2"/>
+    <item
+        android:title="재혁이"
+        android:id="@+id/itemjae1"/>
+    <item
+        android:title="윤재혁"
+        android:id="@+id/itemjae"/>
 </menu>
