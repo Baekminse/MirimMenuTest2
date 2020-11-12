@@ -3,6 +3,9 @@
     xmlns:tools="http://schemas.android.com/tools"
     tools:context="kr.hs.emirim.mirimmenutest2.MainActivity">
     <item
+        android:id="@+id/item_rotate"
+        android:title="그림회전"/>
+    <item
         android:title="재혁"
         android:id="@+id/itemJae2"/>
     <item

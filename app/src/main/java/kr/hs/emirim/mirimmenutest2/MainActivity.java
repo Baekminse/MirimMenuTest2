@@ -1,77 +1,51 @@
-package kr.hs.emirim.mirimmenutest2;
+package kr.ac.ssu.kjminn.mirimoptionmenutest2;
 
-
-import android.graphics.Color;
-import android.os.Bundle;
-
-import com.google.android.material.floatingactionbutton.FloatingActionButton;
-import com.google.android.material.snackbar.Snackbar;
-
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.appcompat.widget.Toolbar;
 
-import android.view.MenuInflater;
-import android.view.View;
-
+import android.os.Bundle;
 import android.view.Menu;
+import android.view.MenuInflater;
 import android.view.MenuItem;
-import android.widget.Button;
-import android.widget.LinearLayout;
+import android.widget.EditText;
+import android.widget.ImageView;
+
+import kr.hs.emirim.mirimmenutest2.R;
 
 public class MainActivity extends AppCompatActivity {
-    LinearLayout baseLayout;
-    Button btn1;
+    EditText editDegree;
+    ImageView img1;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        Toolbar toolbar = findViewById(R.id.toolbar);
-        setSupportActionBar(toolbar);
-        baseLayout = findViewById(R.id.baseline);
-        btn1 = findViewById(R.id.btn);
-
-        FloatingActionButton fab = findViewById(R.id.fab);
-        fab.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
-            }
-        });
+        editDegree = findViewById(R.id.edit_degree);
+        img1 = findViewById(R.id.img1);
     }
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
-        // Inflate the menu; this adds items to the action bar if it is present.
         MenuInflater mInflater = getMenuInflater();
         mInflater.inflate(R.menu.menu_main, menu);
         return true;
     }
 
     @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        // Handle action bar item clicks here. The action bar will
-        // automatically handle clicks on the Home/Up button, so long
-        // as you specify a parent activity in AndroidManifest.xml.
-//        int id = item.getItemId();
-
-        //noinspection SimplifiableIfStatement
-//        if (id == R.id.action_settings) {
-//            return true;
-//        }
-
+    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
         switch (item.getItemId()){
-            case R.id.itemJae2:
-                baseLayout.setBackgroundColor(Color.RED);
-                return true;
-            case R.id.itemjae1:
-                baseLayout.setBackgroundColor(Color.GREEN);
+            case R.id.item_rotate:
+                img1.setRotation(Float.parseFloat(editDegree.getText().toString()));
                 return true;
             case R.id.itemjae:
-                baseLayout.setBackgroundColor(Color.BLUE);
+                img1.setImageResource(R.drawable.jae);
                 return true;
-
+            case R.id.itemjae1:
+                img1.setImageResource(R.drawable.jae1);
+                return true;
+            case R.id.itemJae2:
+                img1.setImageResource(R.drawable.jae2);
+                return true;
         }
 
         return false;
